@@ -1,21 +1,17 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
 
 const attendanceSchema = new mongoose.Schema(
   {
     accountNumber: { type: String, required: true },
-    date: { type: Date, required: true },
     statusIn: {
       type: String,
-      enum: ['on-time', 'late', 'absent'],
+      enum: ['on-time', 'early', 'late', 'absent'],
       required: true
     },
     statusOut: {
       type: String,
-      enum: ['on-time', 'early', 'absent'],
-      required: true
-    },
-    checkInTime: { type: Date },
-    checkOutTime: { type: Date },
+      enum: ['on-time', 'early', 'late', 'absent', 'incomplete']
+    }
   },
   {
     timestamps: true,
@@ -23,4 +19,4 @@ const attendanceSchema = new mongoose.Schema(
   }
 )
 
-module.exports = mongoose.model('Attendance', attendanceSchema)
+export default mongoose.model('Attendance', attendanceSchema)

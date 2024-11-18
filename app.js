@@ -5,6 +5,7 @@ import connectToDB from './src/database/dataBaseConnection.js'
 import users from './src/api/users/routes.js'
 import teachers from './src/api/teachers/routes.js'
 import schedules from './src/api/schedules/routes.js'
+import attendances from './src/api/attendaces/routes.js'
 
 process.loadEnvFile('./src/envs/.env.app')
 
@@ -28,6 +29,7 @@ app.get('/', (req, res) => {
 app.use('/users', users)
 app.use('/teachers', teachers)
 app.use('/schedules', schedules)
+app.use('/attendances', attendances)
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`)

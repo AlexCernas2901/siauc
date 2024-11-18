@@ -1,4 +1,4 @@
-import User from './user.js'
+import User from './model.js'
 
 class Users {
   // post a new user

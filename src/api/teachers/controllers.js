@@ -1,4 +1,4 @@
-import User from '../users/user.js'
+import User from '../users/model.js'
 
 class Teachers {
   // get all teacher role teachers {
